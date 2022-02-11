@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RIZ | Konversi</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script language="JavaScript">
+        function konversiUang() {
+            var nilaiUang = parseFloat(document.formUang.nilai_uang.value);
+            var nilaiKurs = parseFloat(document.formUang.nilai_kurs.value);
+            
+            if (isNaN(nilaiUang) || isNaN(nilaiKurs)) {
+                window.alert("Masukkan nilai uang atau nilai kurs terlebih dahulu");
+            } else {
+                var hasil = nilaiUang / nilaiKurs;
+                window.alert("Hasil konversi adalah : " + hasil + " USD");
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <nav id="navbar">
+            <div class="container">
+                <h1 class="logo"><a href="index.html">RIZ</a></h1>
+                <ul>
+                    <li><a href="katalog.html">KATALOG</a></li>
+                    <li><a href="lokasi.html">LOKASI</a></li>
+                    <li><a class="current" href="konversi.html">KONVERSI</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <h3 class="konversi">Konversi IDR -> USD</h3>
+    
+    <center>
+        <form name="formUang" class="formKonversi">
+            Nilai Uang <br><input type="number" name="nilai_uang" size="7" placeholder="Contoh : 30000"><br>
+            Nilai Kurs <br><input type="number" name="nilai_kurs" size="7"><br>
+            <button type="reset">Reset</button>
+        </form>
+            
+            <button type="submit" onclick="konversiUang()">Konversi</button>
+    </center>
+
+    <footer>
+        <p>Copyright &copy Rizky Kurniawan | 41519010149</p>
+    </footer>
+</body>
+</html>
